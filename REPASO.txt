@@ -1,0 +1,25 @@
+-Se Creo esqueleto HTML
+-Se enlazo los frameworks a trabajar
+-Se creo la conexion a la bd, se insertaron datos
+-Se consulto, imprimio los datos insertados
+-Verificando las consultas, se insertan los datos dinamicamente en el HTML, con del foreach, y se va seteando cada variable
+-Se añadio funcionalidad popover de BS
+-Se encriptaron los datos, usando un form y una funcion nativa de php
+*-  Se creo carrito.php, para recepcionar los datos via POST, y desncriptarlos, (se verifica una vez mas que los datos se envien correctamente)
+* Se creo variable de session, y recoleccion de informacion en caso de que exista o nó
+- Se Creo el html del Carrito, para listar los articulos , posteriormente volvimos el contenido dinamico
+*Se le dio logica, en el archivo carrito.php , para eliminar los elementos, se uso la misma logica , de enviar la informacion mediante un formulario POST-enriptado, se desencripta la informacion, se verifica que coincidan los valores, y se borra /UNSET, dicho registro, el cual tendra que coincidir en esta validacion mediante su ID
+*Se añadio logica, para evitar DUPLICADOS
+- Se maqueto el HTML de correo , donde se enviara la confirmacion del pago del pedido + se creo nueva pagina pagar.php que contendra toda la logica a enviar a PAYPAL
+*Se añadio logico a pagar.php, esencialmente, se creo una nueva tabla para el control de las ventas, primero se inserto una instruccion SQL estatica para revisar que se tenga conexon con dihca tabla
+Posteriormente, se setteo variables, para recuperar toda la informacion recolectada en el total del Carrito. ( Se recupero el ultimo ID insertado con una funcion nativa de PHP)
+*Se añadio una nueva tabla sql para recuperar el reporte del carrito, antes d eproceder a pagar, SE CREO LAS FKEYS-relaciones, se hizo test con sentencia SQL + codigo duro nuevamente en carrrito.php, para verificar su funcionamiento
+-Se maqueto HTML, confirmacion de pago, recuperando el total del carrito
+*INTEGRACION PAYPAL:
+	-Crear cuenta en sandbox-paypal.com
+	-Crear cuenta personal (comprador) y Bussinnes
+	-Generar el endpoint + activarlo en sandbox paypal , al confirmar-finalizar la compra
+	-Ajustar formulario + volver dinamico los inputs , que pasen bien la informaicon y total de nuestro carrito *
+	-Se hicieron pruebas SANDBOX
+	-Al Verificar su correcto funcionamiento, se cambio la URL de sanbox por la oficial de paypal, modo-produccion
+	-Pulir y maquetar el boton HTML de Comprar Ahora 
